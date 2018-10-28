@@ -4,7 +4,7 @@
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-creative/blob/master/LICENSE)
  */
 
-body, html {
+ body, html {
     width: 100%;
     height: 100%
 }
@@ -123,10 +123,10 @@ img::-moz-selection {
     background-color: transparent
 }
 
-@media (min-width:992px) {
+/* @media (min-width:992px) {
     #mainNav {
-        border-color: transparent;
-        background-color: transparent
+        border-color: #fff;
+        background-color: #fff
     }
     #mainNav .navbar-brand {
         color: rgba(255, 255, 255, .7)
@@ -159,7 +159,7 @@ img::-moz-selection {
     #mainNav.navbar-shrink .navbar-nav>li.nav-item>a.nav-link:focus:hover, #mainNav.navbar-shrink .navbar-nav>li.nav-item>a.nav-link:hover {
         color: #f05f40
     }
-}
+} */
 
 header.masthead {
     padding-top: 10rem;

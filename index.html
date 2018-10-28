@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Sliding Window Protocol</title>
+  <title>Error Control</title>
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -26,6 +26,10 @@
   <!-- Custom styles for this template -->
   <link href="css/creative.min.css" rel="stylesheet">
 
+  <!--Font Awesome-->
+  <link rel="stylesheet" href="./font-awesome/css/font-awesome.min.css">
+
+
 </head>
 
 <body id="page-top">
@@ -41,17 +45,12 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#about">About</a>
+            <a class="nav-link " href="about.html">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#services">Services</a>
+            <a class="nav-link " href="references.html">References</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
-          </li>
+
         </ul>
       </div>
     </div>
@@ -62,12 +61,12 @@
       <div class="row">
         <div class="col-lg-10 mx-auto">
           <h1 class="text-uppercase">
-            <strong>Sliding Window Protocol Presentation</strong>
+            <strong>Error Control Presentation</strong>
           </h1>
           <hr>
         </div>
         <div class="col-lg-8 mx-auto">
-          <p class="text-faded mb-5">Network Architecture and Data Communication <br>Fort Hays State University<br>Professor:
+          <p class="text-faded mb-5">Network Architecture and Data Communications <br>Fort Hays State University<br>Professor:
             Kevin Shaffer<br>Presenter: Reaksmey Lim<br>Date: 23 October 2018</p>
 
 
@@ -77,193 +76,173 @@
     </div>
   </header>
 
-  <section class="bg-primary" id="about">
+  <section>
     <div class="container">
       <div class="row">
-        <div class="col-lg-8 mx-auto text-center">
-          <h2 class="section-heading text-white">We've got what you need!</h2>
-          <hr class="light my-4">
-          <p class="text-faded mb-4">Start Bootstrap has everything you need to get your new website up and running in
-            no time! All of the templates and themes on Start Bootstrap are open source, free to download, and easy to
-            use. No strings attached!</p>
-          <a class="btn btn-light btn-xl js-scroll-trigger" href="#services">Get Started!</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="services">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 text-center">
-          <h2 class="section-heading">At Your Service</h2>
-          <hr class="my-4">
-        </div>
-      </div>
-    </div>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-3 col-md-6 text-center">
-          <div class="service-box mt-5 mx-auto">
-            <i class="fas fa-4x fa-gem text-primary mb-3 sr-icon-1"></i>
-            <h3 class="mb-3">Sturdy Templates</h3>
-            <p class="text-muted mb-0">Our templates are updated regularly so they don't break.</p>
+        <div class="col-lg-12 mx-auto text-left">
+          <h2 class="section-heading text-black text-center">OSI Model</h2>
+          <hr class=" my-4">
+          <p class=" mb-4"><a href="https://www.iso.org/home.html" target="_blank">The International Standards
+              Organization (ISO)</a> developed the Open Systems Interconnection
+            (OSI) model. It divides network communication into seven layers. Layers 1-4 are considered the lower
+            layers, and mostly concern themselves with moving data around. Layers 5-7, the upper layers, contain
+            application-level data. Networks operate on one basic principle: "pass it on." Each layer takes care of a
+            very specific job, and then passes the data onto the next layer.
+          </p>
+          <div class="text-center">
+            <img src="./img/osimodel.jpg" alt="OSI Model" style="height:auto;width:auto">
           </div>
-        </div>
-        <div class="col-lg-3 col-md-6 text-center">
-          <div class="service-box mt-5 mx-auto">
-            <i class="fas fa-4x fa-paper-plane text-primary mb-3 sr-icon-2"></i>
-            <h3 class="mb-3">Ready to Ship</h3>
-            <p class="text-muted mb-0">You can use this theme as is, or you can make changes!</p>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6 text-center">
-          <div class="service-box mt-5 mx-auto">
-            <i class="fas fa-4x fa-code text-primary mb-3 sr-icon-3"></i>
-            <h3 class="mb-3">Up to Date</h3>
-            <p class="text-muted mb-0">We update dependencies to keep things fresh.</p>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6 text-center">
-          <div class="service-box mt-5 mx-auto">
-            <i class="fas fa-4x fa-heart text-primary mb-3 sr-icon-4"></i>
-            <h3 class="mb-3">Made with Love</h3>
-            <p class="text-muted mb-0">You have to make your websites with love these days!</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <section class="p-0" id="portfolio">
-    <div class="container-fluid p-0">
-      <div class="row no-gutters popup-gallery">
-        <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="img/portfolio/fullsize/1.jpg">
-            <img class="img-fluid" src="img/portfolio/thumbnails/1.jpg" alt="">
-            <div class="portfolio-box-caption">
-              <div class="portfolio-box-caption-content">
-                <div class="project-category text-faded">
-                  Category
-                </div>
-                <div class="project-name">
-                  Project Name
-                </div>
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="img/portfolio/fullsize/2.jpg">
-            <img class="img-fluid" src="img/portfolio/thumbnails/2.jpg" alt="">
-            <div class="portfolio-box-caption">
-              <div class="portfolio-box-caption-content">
-                <div class="project-category text-faded">
-                  Category
-                </div>
-                <div class="project-name">
-                  Project Name
-                </div>
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="img/portfolio/fullsize/3.jpg">
-            <img class="img-fluid" src="img/portfolio/thumbnails/3.jpg" alt="">
-            <div class="portfolio-box-caption">
-              <div class="portfolio-box-caption-content">
-                <div class="project-category text-faded">
-                  Category
-                </div>
-                <div class="project-name">
-                  Project Name
-                </div>
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="img/portfolio/fullsize/4.jpg">
-            <img class="img-fluid" src="img/portfolio/thumbnails/4.jpg" alt="">
-            <div class="portfolio-box-caption">
-              <div class="portfolio-box-caption-content">
-                <div class="project-category text-faded">
-                  Category
-                </div>
-                <div class="project-name">
-                  Project Name
-                </div>
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="img/portfolio/fullsize/5.jpg">
-            <img class="img-fluid" src="img/portfolio/thumbnails/5.jpg" alt="">
-            <div class="portfolio-box-caption">
-              <div class="portfolio-box-caption-content">
-                <div class="project-category text-faded">
-                  Category
-                </div>
-                <div class="project-name">
-                  Project Name
-                </div>
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="img/portfolio/fullsize/6.jpg">
-            <img class="img-fluid" src="img/portfolio/thumbnails/6.jpg" alt="">
-            <div class="portfolio-box-caption">
-              <div class="portfolio-box-caption-content">
-                <div class="project-category text-faded">
-                  Category
-                </div>
-                <div class="project-name">
-                  Project Name
-                </div>
-              </div>
-            </div>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
+          <br>
+          <br>
+          <br>
+          <br>
+          <h3 class="section-heading text-black text-center">Data Link Layer</h3>
+          <hr class=" my-4">
+          <p class=" mb-4">Layer two is responsible for the logical organization and management of communications sent
+            over that link, such as the location, arrangement and meaning of bits in a frame. It handles the data
+            moving in and out across the physical layer. It also provides a well defined service to the network layer.
+            Data link layer is divided into two sub layers. <a href="https://www.techopedia.com/definition/25059/media-access-control-mac"
+              target="_blank">The Media Access Control (MAC)</a> and <a href="https://www.webopedia.com/TERM/L/Logical_Link_Control_layer.html"
+              target="_blank">Logical Link Control
+              (LLC)</a>.
+          </p>
 
-  <section class="bg-dark text-white">
-    <div class="container text-center">
-      <h2 class="mb-4">Free Download at Start Bootstrap!</h2>
-      <a class="btn btn-light btn-xl sr-button" href="http://startbootstrap.com/template-overviews/creative/">Download
-        Now!</a>
-    </div>
-  </section>
+          <p class=" mb-4">Data-Link layer ensures that an initial connection has been set up, divides output data into
+            data frames, and handles the acknowledgements from a receiver that the data arrived successfully. It also
+            ensures that incoming data has been received successfully by analyzing bit patterns at special places in
+            the frames.
+          </p>
 
-  <section id="contact">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 mx-auto text-center">
-          <h2 class="section-heading">Let's Get In Touch!</h2>
-          <hr class="my-4">
-          <p class="mb-5">Ready to start your next project with us? That's great! Give us a call or send us an email
-            and we will get back to you as soon as possible!</p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-4 ml-auto text-center">
-          <i class="fas fa-phone fa-3x mb-3 sr-contact-1"></i>
-          <p>123-456-6789</p>
-        </div>
-        <div class="col-lg-4 mr-auto text-center">
-          <i class="fas fa-envelope fa-3x mb-3 sr-contact-2"></i>
-          <p>
-            <a href="mailto:your-email@your-domain.com">feedback@startbootstrap.com</a>
+          <p class=" mb-4">There are many tasks that layer two must manage:
+            <ul>
+              <li>build frames</li>
+              <li>keep track of sent frames</li>
+              <li>keep track of received frames</li>
+              <li>notify the opposite end (layer 2) which frame is being sent and which frame in return is expected
+                next
+              </li>
+              <li>check received frames for errors</li>
+              <li>notify the opposite end when frames are received without error</li>
+              <li>request retransmission of frames that had errors</li>
+              <li>tell the opposite end to slow down or stop sending frames</li>
+              <li>tell the opposite end to begin sending frames again</li>
+            </ul>
+            These activities can be summarized into three major functions: link management, flow control and <a href="#error-control"
+              class="js-scroll-trigger">error control</a>.
           </p>
         </div>
       </div>
     </div>
   </section>
+
+  <section id="error-control">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 ">
+          <h4 class="section-heading text-center">Error Control</h4>
+          <hr class="my-4">
+          <p>Network is responsible for transmission of data from one device to another device. The end to end transfer
+            of data from a transmitting application to a receiving application involves many steps, each subject to
+            error.</p>
+          <p class="mb-4">
+            Error control describes procedures used to handle frames that have errors, including how to check a frame
+            for errors, what to do when errors are discovered.
+
+          </p>
+          <p class="mb-4">
+            It allows the receiver to inform te sender if a frame is lost or damanaged during transmission and
+            coordinates the retransmission of those frames by the sender.
+          </p>
+          <p class="mb-4">
+            Error control in the data link layer is based on automatic repeat request (ARQ). Whenever an error is
+            detected, specified frames are transmitted.
+          </p>
+          <p>
+            There are 3 types of error control mechanisms:
+            <ul>
+              <li><a href="./controls/stopandwait.html">Stop-and-wait</a></li>
+              <li><a href="./controls/goback.html">Go-Back-N ARQ</a></li>
+              <li><a href="./controls//selectiverepeat.html">Selective-Repeat ARQ</a></li>
+            </ul>
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+
+
+
+  <!-- Footer -->
+  <footer class="page-footer font-small unique-color-dark bg-dark text-white" style="padding-top:5px;padding-bottom: 10px">
+
+      <!-- Footer Links -->
+      <div class="container text-center text-md-left ">
+  
+        <!-- Grid row -->
+        <div class="row mt-3">
+  
+          <!-- Grid column -->
+          <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mb-4">
+  
+            <!-- Content -->
+            <h6 class="text-uppercase font-weight-bold">Reaksmey Lim</h6>
+            <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+            <p>Thank you for visiting this website.</p>
+  
+          </div>
+          <!-- Grid column -->
+  
+  
+  
+          <!-- Grid column -->
+          <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mb-4">
+  
+            <!-- Links -->
+            <h6 class="text-uppercase font-weight-bold">Useful links</h6>
+            <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+            <p>
+              <a href="about.html">About</a>
+            </p>
+            <p>
+              <a href="references.html">References</a>
+            </p>
+  
+  
+          </div>
+          <!-- Grid column -->
+  
+          <!-- Grid column -->
+          <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mb-md-0 mb-4">
+  
+            <!-- Links -->
+            <h6 class="text-uppercase font-weight-bold">Contact</h6>
+            <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+            <p>
+              <i class="fa fa-home mr-3"></i> Phnom Penh, Cambodia</p>
+            <p>
+              <i class="fa fa-envelope mr-3"></i>l_reaksmey_aup@mail.fhsu.edu</p>
+  
+            <a href="https://www.linkedin.com/in/lim-reaksmey-761467147/" id="linkedin" target="_blank"><i class="fa fa-linkedin fa-lg"></i></a>
+  
+  
+  
+          </div>
+          <!-- Grid column -->
+  
+        </div>
+        <!-- Grid row -->
+  
+      </div>
+      <!-- Footer Links -->
+  
+  
+  
+    </footer>
+    <!-- Footer -->
+
 
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
