@@ -84,17 +84,17 @@
           <hr class=" my-4">
           <p class=" mb-4"><a href="https://www.iso.org/home.html" target="_blank">The International Standards
               Organization (ISO)</a> developed the Open Systems Interconnection
-            (OSI) model. It divides network communication into seven layers. Layers 1-4 are considered the lower
-            layers, and mostly concern themselves with moving data around. Layers 5-7, the upper layers, contain
-            application-level data. Networks operate on one basic principle: "pass it on." Each layer takes care of a
-            very specific job, and then passes the data onto the next layer.
+            (OSI) model. It conceptually divides computer network architecture into 7 layers in a logical progression.
+            The lower layers deal with electrical signals, chunks of binary data, and routing of these data across
+            networks. Higher levels cover network requests and responses, representation of data, and network protocols
+            as seen from a user's point of view.
           </p>
           <div class="text-center">
             <img src="./img/osimodel.jpg" alt="OSI Model" class="img-fluid" style="height:auto;max-width:100%">
           </div>
 
           <br>
-          
+
           <h3 class="section-heading text-black text-center">Data Link Layer</h3>
           <hr class=" my-4">
           <p class=" mb-4">Layer two is responsible for the logical organization and management of communications sent
@@ -112,8 +112,12 @@
             the frames.
           </p>
 
-          <p class=" mb-4">There are many tasks that layer two must manage:
-            <ul>
+          <p class=" mb-4">The three main functions of the data link layer are to deal with transmission errors,
+            regulate the flow of data, and provide a well-defined interface to the network layer. When it transfers the
+            data to the network layer, it uses timers and sequence numbers to check for errors to ensure that all data
+            is successfully received. The data link layer has different services and protocols to complete its tasks.
+            The protocols are the rules required to pass data successfully to the next layer.
+            <!-- <ul>
               <li>build frames</li>
               <li>keep track of sent frames</li>
               <li>keep track of received frames</li>
@@ -125,8 +129,11 @@
               <li>request retransmission of frames that had errors</li>
               <li>tell the opposite end to slow down or stop sending frames</li>
               <li>tell the opposite end to begin sending frames again</li>
-            </ul>
-            These activities can be summarized into three major functions: link management, flow control and error control.
+            </ul> -->
+
+
+            These activities can be summarized into three major functions: link management, flow control and <b>error
+              control</b>.
           </p>
         </div>
         <div class="col-lg-12 mx-auto ">
