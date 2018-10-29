@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Selective-Repeat ARQ</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+        rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic'
+        rel='stylesheet' type='text/css'>
+
+    <!-- Plugin CSS -->
+    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="./css/about.css" rel="stylesheet">
+
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="./font-awesome/css/font-awesome.min.css">
+
+</head>
+
+<body id="page-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand " href="index.html">Reaksmey Lim</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link " href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="references.html">References</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <br>
+
+
+
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 mx-auto text-center">
+
+                    <h2 class="section-heading text-black ">Selective Repeat ARQ</h2>
+                    <hr class=" my-4">
+                </div>
+
+
+                <div class="col-lg-6 col-md-12 col-sm-12 mx-auto text-left">
+
+                    For a system with ample memory space, Selective Reject Request ARQ may provide improved performance
+                    when compared to Go-Back-N ARQ. This error control scheme allows the receiver to selectively reject
+                    frames.
+                    <ul>
+                        <li>Go-Back-N ARQ simplifies the process at the receiver site. Receiver only keeps track of
+                            only one variable, and there is no need to buffer out-of-order frames, they are simply
+                            discarded.</li>
+                        <li>However, Go-Back-N ARQ protocol is inefficient for noisy link. It bandwidth inefficient and
+                            slows down the transmission.</li>
+
+                        <li>In Selective Repeat ARQ, only the damaged frame is resent. More bandwidth efficient but
+                            more complex processing at receiver.</li>
+                        <li>It defines a negative ACK (NAK) to report the sequence number of a damaged frame before the
+                            timer expires.</li>
+                    </ul>
+                </div>
+                <div class="col-lg-6 col-md-12 col-sm-12 mx-auto text-center">
+                    <img src="./img/selectiverepeat.jpg" alt="Selective Repeat ARQ" class="img-fluid" style="height:auto;max-width:100%">
+                </div>
+                <div class="col-lg-12 mx-auto ">
+                    <!--Accordion wrapper-->
+                    <div class="accordion md-accordion accordion-1" id="accordionEx23" role="tablist">
+                        
+                        <div class="card">
+                            <div class="card-header blue lighten-3 z-depth-1" role="tab" id="heading97">
+                                <h5 class=" mb-0 py-1">
+                                    <a class="collapsed font-weight-bold white-text" data-toggle="collapse" href="#collapse97"
+                                        aria-expanded="false" aria-controls="collapse97">
+                                        What happens if the frame is lost?
+                                    </a>
+                                </h5>
+                            </div>
+                            <div id="collapse97" class="collapse" role="tabpanel" aria-labelledby="heading97"
+                                data-parent="#accordionEx23">
+                                <div class="card-body">
+                                    <div class="row my-4">
+                                        <div class="col-md-6">
+
+                                            <p class="mb-0">
+                                                <ul>
+                                                    <li>
+                                                            Frames 0 and 1 are accepted when received because they are in the range specified by the receiver window. It is the same for frame 3.
+                                                    </li>
+                                                    <li>
+                                                            Receiver sends a NAK2 to show that frame 2 has not been received and then sender resends only frame 2 and it is accepted as it is in the range of the window.
+                                                    </li>
+                                                   
+                                                </ul>
+                                            </p>
+                                        </div>
+                                        <div class="col-md-6 mt-3 pt-2">
+                                            <div class="view z-depth-1">
+                                                <img src="./img/selectiverepeatlostframe.jpg" alt="Selective Repeat Lost Frame" class="img-fluid">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header blue lighten-3 z-depth-1" role="tab" id="heading98">
+                                <h5 class=" mb-0 py-1">
+                                    <a class="collapsed font-weight-bold white-text" data-toggle="collapse" href="#collapse98"
+                                        aria-expanded="false" aria-controls="collapse98">
+                                        What are the sizes of sender and receiver windows?
+                                    </a>
+                                </h5>
+                            </div>
+                            <div id="collapse98" class="collapse" role="tabpanel" aria-labelledby="heading98"
+                                data-parent="#accordionEx23">
+                                <div class="card-body">
+                                    <div class="row my-4">
+                                        <div class="col-md-6 mt-3 pt-2">
+                                            <div class="view z-depth-1">
+                                                <img src="./img/selectiverepeatsize.jpg" alt="Selective Repeat Sizes"
+                                                    class="img-fluid">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+
+
+                                            <p class="mb-0">
+                                                <ul>
+                                                    <li>
+                                                            Size of the sender and receiver windows must be at most one-half of 2 m. If m = 2, window size should be 2<sup>m</sup>/2 = 2.
+                                                    </li>
+                                                    <li>
+                                                            Figure compares a window size of 2 with a window size of 3. 
+                                                    </li>
+                                                    <li>
+                                                            Window size is 3 and all ACKs are lost, sender sends duplicate of frame 0, window of the receiver expect to receive frame 0 (part of the window), so accepts frame 0, as the 1<sup>st</sup> frame of the next cycle – an error.
+                                                    </li>
+
+                                                </ul>
+                                            </p>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                       
+                    </div>
+                    <!--Accordion wrapper-->
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <div>
+        <div class="container">
+
+            <!-- Grid row-->
+            <div class="row py-4 d-flex align-items-center">
+
+                <!-- Grid column -->
+                <div class="col-md-12 col-lg-12 text-center text-md-left">
+
+                    <h5><a href="goback.html"> Go-Back-N ARQ</a></h5>
+
+                </div>
+                <!-- Grid column -->
+
+
+
+
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="page-footer font-small unique-color-dark bg-dark text-white" style="padding-top:5px;padding-bottom: 10px">
+
+            <!-- Footer Links -->
+            <div class="container text-center text-md-left ">
+
+                <!-- Grid row -->
+                <div class="row mt-3">
+
+                    <!-- Grid column -->
+                    <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mb-4">
+
+                        <!-- Content -->
+                        <h6 class="text-uppercase font-weight-bold">Reaksmey Lim</h6>
+                        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                        <p>Thank you for visiting this website.</p>
+
+                    </div>
+                    <!-- Grid column -->
+
+
+
+                    <!-- Grid column -->
+                    <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mb-4">
+
+                        <!-- Links -->
+                        <h6 class="text-uppercase font-weight-bold">Useful links</h6>
+                        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                        <p>
+                            <a href="about.html">About</a>
+                        </p>
+                        <p>
+                            <a href="references.html">References</a>
+                        </p>
+
+
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mb-md-0 mb-4">
+
+                        <!-- Links -->
+                        <h6 class="text-uppercase font-weight-bold">Contact</h6>
+                        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                        <p>
+                            <i class="fa fa-home mr-3"></i> Phnom Penh, Cambodia</p>
+                        <p>
+                            <i class="fa fa-envelope mr-3"></i>l_reaksmey_aup@mail.fhsu.edu</p>
+
+                        <a href="https://www.linkedin.com/in/lim-reaksmey-761467147/" id="linkedin" target="_blank"><i
+                                class="fa fa-linkedin fa-lg"></i></a>
+
+
+
+                    </div>
+                    <!-- Grid column -->
+
+                </div>
+                <!-- Grid row -->
+
+            </div>
+            <!-- Footer Links -->
+
+
+
+        </footer>
+        <!-- Footer -->
+
+
+
+        <!-- Bootstrap core JavaScript -->
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+        <!-- Plugin JavaScript -->
+        <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+        <script src="vendor/scrollreveal/scrollreveal.min.js"></script>
+        <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+        <!-- Custom scripts for this template -->
+        <script src="js/creative.min.js"></script>
+
+</body>
+
+</html>

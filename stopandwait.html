@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Stop-and-Wait</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+        rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic'
+        rel='stylesheet' type='text/css'>
+
+    <!-- Plugin CSS -->
+    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="./css/about.css" rel="stylesheet">
+
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="./font-awesome/css/font-awesome.min.css">
+
+</head>
+
+<body id="page-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand " href="index.html">Reaksmey Lim</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link " href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="references.html">References</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <br>
+
+
+
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 mx-auto text-center">
+
+                    <h2 class="section-heading text-black ">Stop-and-Wait</h2>
+                    <hr class=" my-4">
+                </div>
+                <div class="col-lg-6 col-md-12 col-sm-12 mx-auto text-center">
+                    <img src="./img/stopandwait.jpg" alt="Stop-and-Wait" class="img-fluid" style="height:auto;max-width:100%">
+                </div>
+
+                <div class="col-lg-6 col-md-12 col-sm-12 mx-auto text-left">
+
+
+                    <ul>
+                        <li>Senders keeps a copy of the last frame until it receives an acknowledgement.</li>
+                        <li>For identification, both data frames and acknowledgements (ACK) frames are numbered
+                            alternatively 0 and 1.</li>
+                        <li>Sender has a control variable (S) that holds the number of the recently sent frame. (0 or
+                            1)</li>
+                        <li>Receiver has a control variable (R) that holds the number of the next frame expected (0 or
+                            1).</li>
+                        <li>Sender starts a timer when it sends a frame. If an ACK is not received within a allocated
+                            time period, the sender assumes that the frame was lost or damaged and resends it.</li>
+                        <li>Receiver send only positive ACK if the frame is intact.</li>
+                        <li>ACK number always defines the number of the next expected frame.</li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-12 mx-auto ">
+                    <!--Accordion wrapper-->
+                    <div class="accordion md-accordion accordion-1" id="accordionEx23" role="tablist">
+                        <div class="card">
+                            <div class="card-header blue lighten-3 z-depth-1" role="tab" id="heading96">
+                                <h5 class=" mb-0 py-1">
+                                    <a class="white-text font-weight-bold" data-toggle="collapse" href="#collapse96"
+                                        aria-expanded="true" aria-controls="collapse96">
+                                        What happens if the frame is damaged?
+                                    </a>
+                                </h5>
+                            </div>
+                            <div id="collapse96" class="collapse show" role="tabpanel" aria-labelledby="heading96"
+                                data-parent="#accordionEx23">
+                                <div class="card-body">
+                                    <div class="row my-4">
+                                        <div class="col-md-6">
+
+
+                                            <p class="mb-0">
+                                                <ul>
+                                                    <li>When a receiver receives a damaged frame, it discards it and
+                                                        keeps its value of R.</li>
+                                                    <li>After the timer at the sender expires, another copy of frame 1
+                                                        is sent.</li>
+                                                </ul>
+                                            </p>
+                                        </div>
+                                        <div class="col-md-6 mt-3 pt-2">
+                                            <div class="view z-depth-1">
+                                                <img src="./img/stopandwaitlost.jpg" alt="Lost Frame" class="img-fluid">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 mt-3 pt-2">
+                                            <div class="view z-depth-1">
+                                                <img src="./img/stopandwaitlost2.jpg" alt="Lost Frame 2" class="img-fluid">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+
+
+                                            <p class="mb-0">
+                                                <ul>
+                                                    <li>If the sender receives a damaged ACK, it discards it.</li>
+                                                    <li>When the timer of the sender expires, the sender retransmits
+                                                        frame 1.</li>
+                                                    <li>Receiver has already received frame 1 and expecting to receive
+                                                        frame 0 (R=0). Therefore it discards the second copy of frame
+                                                        1.</li>
+                                                </ul>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header blue lighten-3 z-depth-1" role="tab" id="heading97">
+                                <h5 class=" mb-0 py-1">
+                                    <a class="collapsed font-weight-bold white-text" data-toggle="collapse" href="#collapse97"
+                                        aria-expanded="false" aria-controls="collapse97">
+                                        Can an ACK frame be delayed?
+                                    </a>
+                                </h5>
+                            </div>
+                            <div id="collapse97" class="collapse" role="tabpanel" aria-labelledby="heading97"
+                                data-parent="#accordionEx23">
+                                <div class="card-body">
+                                    <div class="row my-4">
+                                        <div class="col-md-6">
+
+                                            <p class="mb-0">
+                                                <ul>
+                                                    <li>
+                                                        The ACK can be delayed at the receiver or due to some problem
+                                                    </li>
+                                                    <li>
+                                                        It is received after the timer for frame 0 has expired.
+                                                    </li>
+                                                    <li>
+                                                        Sender retransmitted a copy of frame 0. However, R =1 means
+                                                        receiver expects to see frame 1. Receiver discards the
+                                                        duplicate frame 0.
+                                                    </li>
+                                                    <li>
+                                                        Sender receives 2 ACKs, it discards the second ACK.
+                                                    </li>
+                                                </ul>
+                                            </p>
+                                        </div>
+                                        <div class="col-md-6 mt-3 pt-2">
+                                            <div class="view z-depth-1">
+                                                <img src="./img/stopandwaitdelayed.jpg" alt="Delayed frame" class="img-fluid">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header blue lighten-3 z-depth-1" role="tab" id="heading98">
+                                <h5 class=" mb-0 py-1">
+                                    <a class="collapsed font-weight-bold white-text" data-toggle="collapse" href="#collapse98"
+                                        aria-expanded="false" aria-controls="collapse98">
+                                        What is piggybacking method?
+                                    </a>
+                                </h5>
+                            </div>
+                            <div id="collapse98" class="collapse" role="tabpanel" aria-labelledby="heading98"
+                                data-parent="#accordionEx23">
+                                <div class="card-body">
+                                    <div class="row my-4">
+                                        <div class="col-md-6 mt-3 pt-2">
+                                            <div class="view z-depth-1">
+                                                <img src="./img/stopandwaitpiggybacking.jpg" alt="Piggybacking Method"
+                                                    class="img-fluid">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+
+
+                                            <p class="mb-0">
+                                                <ul>
+                                                    <li>
+                                                        A method to combine a data frame with ACK.
+                                                    </li>
+                                                    <li>
+                                                        Station A and B both have data to send.
+                                                    </li>
+                                                    <li>
+                                                        Instead of sending separately, station A sends a data frame
+                                                        that includes an ACK.
+                                                    </li>
+                                                    <li>
+                                                        Station B does the same thing.
+                                                    </li>
+                                                    <li>
+                                                        Piggybacking saves bandwidth.
+                                                    </li>
+                                                </ul>
+                                            </p>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header blue lighten-3 z-depth-1" role="tab" id="heading99">
+                                <h5 class=" mb-0 py-1">
+                                    <a class="collapsed font-weight-bold white-text" data-toggle="collapse" href="#collapse99"
+                                        aria-expanded="false" aria-controls="collapse99">
+                                        What are the disadvantages of Stop-and-Wait?
+                                    </a>
+                                </h5>
+                            </div>
+                            <div id="collapse99" class="collapse" role="tabpanel" aria-labelledby="heading99"
+                                data-parent="#accordionEx23">
+                                <div class="card-body">
+                                    <div class="row my-4">
+
+                                        <div class="col-md-12">
+
+
+                                            <p class="mb-0">
+                                                <ul>
+                                                    <li>
+                                                        In stop-and-wait, at any point in time, there is only one frame
+                                                        that is sent and waiting to be acknowledged.
+                                                    </li>
+                                                    <li>
+                                                        This is not a good use of transmission medium.
+                                                    </li>
+                                                    <li>
+                                                        To improve efficiency, multiple frames should be in transition
+                                                        while waiting for ACK.
+                                                    </li>
+
+                                                </ul>
+                                            </p>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Accordion wrapper-->
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <div >
+        <div class="container">
+
+            <!-- Grid row-->
+            <div class="row py-4 d-flex align-items-center">
+
+
+
+
+                <!-- Grid column -->
+                <div class="col-md-12 col-lg-12 text-center text-md-right">
+
+                   <h5><a href="goback.html">Go-Back-N ARQ </a></h5>
+
+                </div>
+                <!-- Grid column -->
+
+            </div>
+            <!-- Grid row-->
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="page-footer font-small unique-color-dark bg-dark text-white" style="padding-top:5px;padding-bottom: 10px">
+
+        <!-- Footer Links -->
+        <div class="container text-center text-md-left ">
+
+            <!-- Grid row -->
+            <div class="row mt-3">
+
+                <!-- Grid column -->
+                <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mb-4">
+
+                    <!-- Content -->
+                    <h6 class="text-uppercase font-weight-bold">Reaksmey Lim</h6>
+                    <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                    <p>Thank you for visiting this website.</p>
+
+                </div>
+                <!-- Grid column -->
+
+
+
+                <!-- Grid column -->
+                <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mb-4">
+
+                    <!-- Links -->
+                    <h6 class="text-uppercase font-weight-bold">Useful links</h6>
+                    <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                    <p>
+                        <a href="about.html">About</a>
+                    </p>
+                    <p>
+                        <a href="references.html">References</a>
+                    </p>
+
+
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mb-md-0 mb-4">
+
+                    <!-- Links -->
+                    <h6 class="text-uppercase font-weight-bold">Contact</h6>
+                    <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                    <p>
+                        <i class="fa fa-home mr-3"></i> Phnom Penh, Cambodia</p>
+                    <p>
+                        <i class="fa fa-envelope mr-3"></i>l_reaksmey_aup@mail.fhsu.edu</p>
+
+                    <a href="https://www.linkedin.com/in/lim-reaksmey-761467147/" id="linkedin" target="_blank"><i
+                            class="fa fa-linkedin fa-lg"></i></a>
+
+
+
+                </div>
+                <!-- Grid column -->
+
+            </div>
+            <!-- Grid row -->
+
+        </div>
+        <!-- Footer Links -->
+
+
+
+    </footer>
+    <!-- Footer -->
+
+
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="vendor/scrollreveal/scrollreveal.min.js"></script>
+    <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/creative.min.js"></script>
+
+</body>
+
+</html>
